@@ -8,6 +8,7 @@
 // 首页分类面板
 
 import UIKit
+private let kPannelViewWidth = 280.0            // 分类面板宽度
 
 protocol CJCategoryControllerDelegate {
     func closePannel() -> Void
@@ -15,13 +16,12 @@ protocol CJCategoryControllerDelegate {
 
 class CJCategoryController: UIViewController {
 
-    private let kPannelViewWidth = 280.0
     var pannelView: UIView!
     var delegate: CJCategoryControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        self.view.backgroundColor = UIColor.clear
         self.view.isUserInteractionEnabled = true
         
         let tapGes = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTouched))
@@ -30,6 +30,7 @@ class CJCategoryController: UIViewController {
         // pannelView
         self.pannelView = UIView()
         var frame = self.view.bounds
+        frame.origin.x = -(CGFloat)(kPannelViewWidth)
         frame.size.width = CGFloat(kPannelViewWidth)
         self.pannelView.frame = frame
         self.pannelView.backgroundColor = UIColor.white
@@ -37,8 +38,30 @@ class CJCategoryController: UIViewController {
         self.view.addSubview(self.pannelView)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        UIView.animate(withDuration: 0.3) { 
+            // 渐现
+            self.view.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+            // 平移
+            var frame = self.pannelView.frame
+            frame.origin.x = 0
+            self.pannelView.frame = frame
+        }
+    }
+    
     func backgroundViewTouched() {
-        self.delegate?.closePannel()
+        UIView.animate(withDuration: 0.2, animations: { 
+            // 渐隐
+            self.view.backgroundColor = UIColor.clear
+            // 平移
+            var frame = self.pannelView.frame
+            frame.origin.x = -(CGFloat)(kPannelViewWidth)
+            self.pannelView.frame = frame
+        }) { (Bool) in
+            self.delegate?.closePannel()
+        }
     }
 
     override func didReceiveMemoryWarning() {
