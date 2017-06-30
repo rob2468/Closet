@@ -13,7 +13,7 @@ class CJHomeController: UIViewController {
     
     var expandButton: UIButton!                     // 展开分类面板按钮
     var exhibitController: CJExhibitController!     // 单品展示视图控制器
-    var categoryController: CJCategoryController?   // 分类面板视图控制器
+    var categoryController: CJCategoryController!   // 分类面板视图控制器
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,11 @@ class CJHomeController: UIViewController {
     }
     
     func expandButtonPressed() -> Void {
-        print("expandButtonPressed")
+        self.categoryController = CJCategoryController()
+        self.categoryController.view.frame = self.view.bounds
+        self.categoryController.view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, .flexibleHeight]
+        self.view.addSubview(self.categoryController.view)
+        
     }
     
     override func didReceiveMemoryWarning() {

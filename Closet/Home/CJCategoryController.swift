@@ -11,10 +11,30 @@ import UIKit
 
 class CJCategoryController: UIViewController {
 
+    var pannelView: UIView!
+    private let kPannelViewWidth = 280.0
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        self.view.isUserInteractionEnabled = true
+        
+        let tapGes = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTouched))
+        self.view.addGestureRecognizer(tapGes)
+        
+        // pannelView
+        self.pannelView = UIView()
+        var frame = self.view.bounds
+        frame.size.width = CGFloat(kPannelViewWidth)
+        self.pannelView.frame = frame
+        self.pannelView.backgroundColor = UIColor.white
+        self.pannelView.autoresizingMask = UIViewAutoresizing.flexibleRightMargin
+        self.view.addSubview(self.pannelView)
 
-        // Do any additional setup after loading the view.
+    }
+    
+    func backgroundViewTouched() {
+        print("backgroundViewTouched")
     }
 
     override func didReceiveMemoryWarning() {
