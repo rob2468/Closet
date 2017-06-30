@@ -17,15 +17,12 @@ protocol CJCategoryControllerDelegate {
 class CJCategoryController: UIViewController {
 
     var pannelView: UIView!
+    var closeButton: UIButton!
     var delegate: CJCategoryControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.clear
-        self.view.isUserInteractionEnabled = true
-        
-        let tapGes = UITapGestureRecognizer(target: self, action: #selector(backgroundViewTouched))
-        self.view.addGestureRecognizer(tapGes)
         
         // pannelView
         self.pannelView = UIView()
@@ -36,6 +33,16 @@ class CJCategoryController: UIViewController {
         self.pannelView.backgroundColor = UIColor.white
         self.pannelView.autoresizingMask = UIViewAutoresizing.flexibleRightMargin
         self.view.addSubview(self.pannelView)
+        
+        // closeButton
+        self.closeButton = UIButton.init(type: UIButtonType.custom)
+        self.closeButton.backgroundColor = UIColor.clear
+        frame = self.view.bounds
+        frame.origin.x = CGFloat(kPannelViewWidth)
+        frame.size.width -= CGFloat(kPannelViewWidth)
+        self.closeButton.frame = frame;
+        self.closeButton.addTarget(self, action: #selector(closeButtonPressed), for: UIControlEvents.touchUpInside)
+        self.view.addSubview(self.closeButton)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,7 +58,7 @@ class CJCategoryController: UIViewController {
         }
     }
     
-    func backgroundViewTouched() {
+    func closeButtonPressed() {
         UIView.animate(withDuration: 0.2, animations: { 
             // 渐隐
             self.view.backgroundColor = UIColor.clear
