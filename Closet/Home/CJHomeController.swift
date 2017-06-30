@@ -9,7 +9,7 @@
 
 import UIKit
 
-class CJHomeController: UIViewController {
+class CJHomeController: UIViewController, CJCategoryControllerDelegate {
     
     var expandButton: UIButton!                     // 展开分类面板按钮
     var exhibitController: CJExhibitController!     // 单品展示视图控制器
@@ -40,11 +40,19 @@ class CJHomeController: UIViewController {
     }
     
     func expandButtonPressed() -> Void {
+        // 显示分类面板
         self.categoryController = CJCategoryController()
+        self.categoryController.delegate = self
         self.categoryController.view.frame = self.view.bounds
         self.categoryController.view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, .flexibleHeight]
         self.view.addSubview(self.categoryController.view)
-        
+        self.addChildViewController(self.categoryController)
+    }
+    
+    func closePannel() {
+        // 关闭分类面板
+        self.categoryController.view.removeFromSuperview()
+        self.categoryController = nil
     }
     
     override func didReceiveMemoryWarning() {

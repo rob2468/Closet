@@ -9,11 +9,16 @@
 
 import UIKit
 
+protocol CJCategoryControllerDelegate {
+    func closePannel() -> Void
+}
+
 class CJCategoryController: UIViewController {
 
-    var pannelView: UIView!
     private let kPannelViewWidth = 280.0
-
+    var pannelView: UIView!
+    var delegate: CJCategoryControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.2)
@@ -30,11 +35,10 @@ class CJCategoryController: UIViewController {
         self.pannelView.backgroundColor = UIColor.white
         self.pannelView.autoresizingMask = UIViewAutoresizing.flexibleRightMargin
         self.view.addSubview(self.pannelView)
-
     }
     
     func backgroundViewTouched() {
-        print("backgroundViewTouched")
+        self.delegate?.closePannel()
     }
 
     override func didReceiveMemoryWarning() {
