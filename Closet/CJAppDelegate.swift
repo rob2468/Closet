@@ -18,6 +18,10 @@ class CJAppDelegate: UIResponder, UIApplicationDelegate {
         window.backgroundColor = UIColor.white
         window.makeKeyAndVisible()
         self.window = window
+        
+        #if DEBUG
+            BDHttpServerManager.startHttpServer()
+        #endif
         return true
     }
 
