@@ -22,6 +22,28 @@
 
 /* Begin PBXFileReference section */
 		7AD4115F5BA576EE45E728A5 /* Pods_Closet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Closet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F1342BE1F3B1D23008E86CF /* fmdb_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fmdb_Prefix.pch; sourceTree = "<group>"; };
+		8F1342BF1F3B1D23008E86CF /* fts3_tokenizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fts3_tokenizer.h; sourceTree = "<group>"; };
+		8F1342C01F3B1D23008E86CF /* FMDatabase+InMemoryOnDiskIO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMDatabase+InMemoryOnDiskIO.h"; sourceTree = "<group>"; };
+		8F1342C11F3B1D23008E86CF /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		8F1342C21F3B1D23008E86CF /* FMDatabase+FTS3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FMDatabase+FTS3.m"; sourceTree = "<group>"; };
+		8F1342C31F3B1D23008E86CF /* FMDatabase+InMemoryOnDiskIO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FMDatabase+InMemoryOnDiskIO.m"; sourceTree = "<group>"; };
+		8F1342C41F3B1D23008E86CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8F1342C51F3B1D23008E86CF /* FMDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		8F1342C61F3B1D23008E86CF /* FMDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		8F1342C71F3B1D23008E86CF /* FMTokenizers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMTokenizers.m; sourceTree = "<group>"; };
+		8F1342C81F3B1D23008E86CF /* FMDatabasePool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		8F1342C91F3B1D23008E86CF /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		8F1342CA1F3B1D23008E86CF /* FMTokenizers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMTokenizers.h; sourceTree = "<group>"; };
+		8F1342CB1F3B1D23008E86CF /* FMDatabase+FTS3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMDatabase+FTS3.h"; sourceTree = "<group>"; };
+		8F1342CC1F3B1D23008E86CF /* FMResultSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		8F1342CD1F3B1D23008E86CF /* FMDatabaseQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		8F1342CE1F3B1D23008E86CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F1342CF1F3B1D23008E86CF /* FMDatabaseQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		8F1342D01F3B1D23008E86CF /* FMDatabasePool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		8F1342D11F3B1D23008E86CF /* FMDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		8F1342D21F3B1D23008E86CF /* FMResultSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		8F1342D41F3B1DE6008E86CF /* Closet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Closet-Bridging-Header.h"; sourceTree = "<group>"; };
 		8F18584B1F03EA6700817368 /* Pods-Closet.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-Closet.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Closet/Pods-Closet.debug.xcconfig"; sourceTree = "<group>"; };
 		8F18584D1F03EA6F00817368 /* Pods-Closet.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-Closet.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Closet/Pods-Closet.release.xcconfig"; sourceTree = "<group>"; };
 		8F1858501F03EADE00817368 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +77,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8F13427E1F3B1A05008E86CF /* ThirdParties */ = {
+			isa = PBXGroup;
+			children = (
+				8F13427F1F3B1A05008E86CF /* FMDB */,
+			);
+			path = ThirdParties;
+			sourceTree = "<group>";
+		};
+		8F13427F1F3B1A05008E86CF /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				8F1342C51F3B1D23008E86CF /* FMDatabase.h */,
+				8F1342C61F3B1D23008E86CF /* FMDatabase.m */,
+				8F1342CB1F3B1D23008E86CF /* FMDatabase+FTS3.h */,
+				8F1342C21F3B1D23008E86CF /* FMDatabase+FTS3.m */,
+				8F1342C01F3B1D23008E86CF /* FMDatabase+InMemoryOnDiskIO.h */,
+				8F1342C31F3B1D23008E86CF /* FMDatabase+InMemoryOnDiskIO.m */,
+				8F1342C11F3B1D23008E86CF /* FMDatabaseAdditions.h */,
+				8F1342C91F3B1D23008E86CF /* FMDatabaseAdditions.m */,
+				8F1342C81F3B1D23008E86CF /* FMDatabasePool.h */,
+				8F1342D01F3B1D23008E86CF /* FMDatabasePool.m */,
+				8F1342CF1F3B1D23008E86CF /* FMDatabaseQueue.h */,
+				8F1342CD1F3B1D23008E86CF /* FMDatabaseQueue.m */,
+				8F1342BE1F3B1D23008E86CF /* fmdb_Prefix.pch */,
+				8F1342D11F3B1D23008E86CF /* FMDB.h */,
+				8F1342CC1F3B1D23008E86CF /* FMResultSet.h */,
+				8F1342D21F3B1D23008E86CF /* FMResultSet.m */,
+				8F1342CA1F3B1D23008E86CF /* FMTokenizers.h */,
+				8F1342C71F3B1D23008E86CF /* FMTokenizers.m */,
+				8F1342BF1F3B1D23008E86CF /* fts3_tokenizer.h */,
+				8F1342CE1F3B1D23008E86CF /* Info.plist */,
+				8F1342C41F3B1D23008E86CF /* main.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
 		8F18584F1F03EADE00817368 /* Closet */ = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +122,7 @@
 				8F1858541F03EADE00817368 /* CJRootController.swift */,
 				8FB6F7FD1F05EFBC00786297 /* Home */,
 				8FB6F8051F05F15200786297 /* Supporting Files */,
+				8F13427E1F3B1A05008E86CF /* ThirdParties */,
 			);
 			name = Closet;
 			sourceTree = "<group>";
@@ -81,6 +140,7 @@
 		8FB6F8051F05F15200786297 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8F1342D41F3B1DE6008E86CF /* Closet-Bridging-Header.h */,
 				8FB6F8061F05F15200786297 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -149,6 +209,7 @@
 				TargetAttributes = {
 					8FD708E01EFA61D900E0547C = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -359,11 +420,14 @@
 			baseConfigurationReference = 8F18584B1F03EA6700817368 /* Pods-Closet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.rob2468.Closet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/Closet-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -373,11 +437,13 @@
 			baseConfigurationReference = 8F18584D1F03EA6F00817368 /* Pods-Closet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.rob2468.Closet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Supporting Files/Closet-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
