@@ -20,6 +20,8 @@ class CJAppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         
         #if DEBUG
+            let dbFilePath = CJDBManager.sharedInstance.dbFilePath.absoluteString
+            BDHttpServerManager.updateDatabaseFilePath(dbFilePath)
             BDHttpServerManager.startHttpServer()
         #endif
         return true

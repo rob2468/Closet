@@ -59,6 +59,7 @@
 		8F1344431F3B2C1C008E86CF /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1344351F3B2C03008E86CF /* FMDatabaseQueue.m */; };
 		8F1344441F3B2C1C008E86CF /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1344381F3B2C03008E86CF /* FMResultSet.m */; };
 		8F1344471F3B2D60008E86CF /* web in Resources */ = {isa = PBXBuildFile; fileRef = 8F1344461F3B2C86008E86CF /* web */; };
+		8F13445E1F3B3160008E86CF /* CJDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F13445D1F3B3160008E86CF /* CJDBManager.swift */; };
 		8F18584C1F03EA6700817368 /* Pods-Closet.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8F18584B1F03EA6700817368 /* Pods-Closet.debug.xcconfig */; };
 		8F18584E1F03EA6F00817368 /* Pods-Closet.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8F18584D1F03EA6F00817368 /* Pods-Closet.release.xcconfig */; };
 		8F1858591F03EADE00817368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F1858501F03EADE00817368 /* Assets.xcassets */; };
@@ -183,6 +184,7 @@
 		8F1344371F3B2C03008E86CF /* FMResultSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		8F1344381F3B2C03008E86CF /* FMResultSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		8F1344461F3B2C86008E86CF /* web */ = {isa = PBXFileReference; lastKnownFileType = folder; path = web; sourceTree = "<group>"; };
+		8F13445D1F3B3160008E86CF /* CJDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJDBManager.swift; sourceTree = "<group>"; };
 		8F18584B1F03EA6700817368 /* Pods-Closet.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-Closet.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Closet/Pods-Closet.debug.xcconfig"; sourceTree = "<group>"; };
 		8F18584D1F03EA6F00817368 /* Pods-Closet.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-Closet.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Closet/Pods-Closet.release.xcconfig"; sourceTree = "<group>"; };
 		8F1858501F03EADE00817368 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -461,6 +463,14 @@
 			path = fmdb;
 			sourceTree = "<group>";
 		};
+		8F13445A1F3B3130008E86CF /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				8F13445D1F3B3160008E86CF /* CJDBManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		8F18584F1F03EADE00817368 /* Closet */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +478,7 @@
 				8F1858511F03EADE00817368 /* LaunchScreen.storyboard */,
 				8F1858531F03EADE00817368 /* CJAppDelegate.swift */,
 				8F1858541F03EADE00817368 /* CJRootController.swift */,
+				8F13445A1F3B3130008E86CF /* Database */,
 				8FB6F7FD1F05EFBC00786297 /* Home */,
 				8FB6F8051F05F15200786297 /* Supporting Files */,
 				8F13427E1F3B1A05008E86CF /* ThirdParties */,
@@ -667,6 +678,7 @@
 				8F1344151F3B229E008E86CF /* BDHttpServerDefine.m in Sources */,
 				8F1344111F3B229E008E86CF /* BDHttpServerConnection+Preview.m in Sources */,
 				8F1344051F3B2294008E86CF /* DDDispatchQueueLogFormatter.m in Sources */,
+				8F13445E1F3B3160008E86CF /* CJDBManager.swift in Sources */,
 				8F1343FF1F3B2294008E86CF /* DDASLLogger.m in Sources */,
 				8F1343E91F3B226A008E86CF /* DDData.m in Sources */,
 				8F1343FD1F3B2294008E86CF /* DDAbstractDatabaseLogger.m in Sources */,

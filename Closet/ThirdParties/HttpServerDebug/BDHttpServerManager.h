@@ -22,4 +22,8 @@
 
 + (NSString *)fetchWebUploadDirectoryPath;
 
++ (void)updateDatabaseFilePath:(NSString *)path;
+
++ (NSString *)fetchDatabaseFilePath;
+
 @end

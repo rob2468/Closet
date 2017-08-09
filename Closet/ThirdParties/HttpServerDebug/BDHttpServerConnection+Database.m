@@ -10,13 +10,14 @@
 #import "HTTPDataResponse.h"
 #import "BDHttpServerDefine.h"
 #import "FMDB.h"
+#import "BDHttpServerManager.h"
 
 @implementation BDHttpServerConnection (Database)
 
 - (NSObject<HTTPResponse> *)fetchDatabaseResponse:(NSDictionary *)params
 {
     HTTPDataResponse *response;
-    NSString *dbPath;
+    NSString *dbPath = [BDHttpServerManager fetchDatabaseFilePath];
     FMDatabase *database = [FMDatabase databaseWithPath:dbPath];
     NSString *tableName = [params objectForKey:@"table_name"];
     if ([database open]) {
