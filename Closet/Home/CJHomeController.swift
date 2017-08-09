@@ -47,6 +47,8 @@ class CJHomeController: UIViewController, CJCategoryControllerDelegate {
         self.categoryController.view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, .flexibleHeight]
         self.view.addSubview(self.categoryController.view)
         self.addChildViewController(self.categoryController)
+        
+//        BDHttpServerManager.startHttpServer();
     }
     
     func closePannel() {
