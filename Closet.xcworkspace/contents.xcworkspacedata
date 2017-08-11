@@ -5,6 +5,9 @@
       location = "group:Closet/Closet.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:HttpServerDebug/HttpServerDebug.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
