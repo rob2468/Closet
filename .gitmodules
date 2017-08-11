@@ -1,0 +1,3 @@
+[submodule "HttpServerDebug"]
+	path = HttpServerDebug
+	url = git@github.com:rob2468/HttpServerDebug.git
