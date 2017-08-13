@@ -19,6 +19,7 @@
 		8FB6F8071F05F15200786297 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FB6F8061F05F15200786297 /* Info.plist */; };
 		8FEFE7041F3D697000D841E0 /* HttpServerDebug.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8FEFE7031F3D697000D841E0 /* HttpServerDebug.bundle */; };
 		8FEFE7091F3D6FE100D841E0 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEFE7081F3D6FE100D841E0 /* libxml2.tbd */; };
+		8FF95F291F4096A600DDC97F /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF95F281F4096A600DDC97F /* libFMDB.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		8FD708E11EFA61D900E0547C /* Closet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Closet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FEFE7031F3D697000D841E0 /* HttpServerDebug.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = HttpServerDebug.bundle; path = ../HttpServerDebug/HttpServerDebug/Resources/HttpServerDebug.bundle; sourceTree = "<group>"; };
 		8FEFE7081F3D6FE100D841E0 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		8FF95F281F4096A600DDC97F /* libFMDB.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFMDB.a; path = "../../../Library/Developer/Xcode/DerivedData/Closet-cqlnlhkclkznrocfxsuxkhtnzpov/Build/Products/Debug-iphonesimulator/libFMDB.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FF95F291F4096A600DDC97F /* libFMDB.a in Frameworks */,
 				8FEFE7091F3D6FE100D841E0 /* libxml2.tbd in Frameworks */,
 				8F16DD341F3CA4FF00A2BFBF /* libHttpServerDebug.a in Frameworks */,
 			);
@@ -54,6 +57,7 @@
 		720994CFFB4194E474DE88FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8FF95F281F4096A600DDC97F /* libFMDB.a */,
 				8FEFE7081F3D6FE100D841E0 /* libxml2.tbd */,
 				8F16DD331F3CA4FF00A2BFBF /* libHttpServerDebug.a */,
 			);
