@@ -20,6 +20,9 @@
 		8FEFE7041F3D697000D841E0 /* HttpServerDebug.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8FEFE7031F3D697000D841E0 /* HttpServerDebug.bundle */; };
 		8FEFE7091F3D6FE100D841E0 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEFE7081F3D6FE100D841E0 /* libxml2.tbd */; };
 		8FF95F291F4096A600DDC97F /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF95F281F4096A600DDC97F /* libFMDB.a */; };
+		8FF95F421F409D7200DDC97F /* libCocoaLumberjack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF95F411F409D7200DDC97F /* libCocoaLumberjack.a */; };
+		8FF95F871F413CA900DDC97F /* libCocoaAsyncSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF95F861F413CA900DDC97F /* libCocoaAsyncSocket.a */; };
+		8FF95FAA1F413DC300DDC97F /* libCocoaHttpServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF95FA91F413DC300DDC97F /* libCocoaHttpServer.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		8FEFE7031F3D697000D841E0 /* HttpServerDebug.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = HttpServerDebug.bundle; path = ../HttpServerDebug/HttpServerDebug/Resources/HttpServerDebug.bundle; sourceTree = "<group>"; };
 		8FEFE7081F3D6FE100D841E0 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		8FF95F281F4096A600DDC97F /* libFMDB.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFMDB.a; path = "../../../Library/Developer/Xcode/DerivedData/Closet-cqlnlhkclkznrocfxsuxkhtnzpov/Build/Products/Debug-iphonesimulator/libFMDB.a"; sourceTree = "<group>"; };
+		8FF95F411F409D7200DDC97F /* libCocoaLumberjack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCocoaLumberjack.a; path = "../HttpServerDebug/build/Debug-iphoneos/libCocoaLumberjack.a"; sourceTree = "<group>"; };
+		8FF95F861F413CA900DDC97F /* libCocoaAsyncSocket.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCocoaAsyncSocket.a; path = "../HttpServerDebug/build/Debug-iphoneos/libCocoaAsyncSocket.a"; sourceTree = "<group>"; };
+		8FF95FA91F413DC300DDC97F /* libCocoaHttpServer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCocoaHttpServer.a; path = "../HttpServerDebug/build/Debug-iphoneos/libCocoaHttpServer.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FF95FAA1F413DC300DDC97F /* libCocoaHttpServer.a in Frameworks */,
+				8FF95F871F413CA900DDC97F /* libCocoaAsyncSocket.a in Frameworks */,
+				8FF95F421F409D7200DDC97F /* libCocoaLumberjack.a in Frameworks */,
 				8FF95F291F4096A600DDC97F /* libFMDB.a in Frameworks */,
 				8FEFE7091F3D6FE100D841E0 /* libxml2.tbd in Frameworks */,
 				8F16DD341F3CA4FF00A2BFBF /* libHttpServerDebug.a in Frameworks */,
@@ -57,6 +66,9 @@
 		720994CFFB4194E474DE88FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8FF95FA91F413DC300DDC97F /* libCocoaHttpServer.a */,
+				8FF95F861F413CA900DDC97F /* libCocoaAsyncSocket.a */,
+				8FF95F411F409D7200DDC97F /* libCocoaLumberjack.a */,
 				8FF95F281F4096A600DDC97F /* libFMDB.a */,
 				8FEFE7081F3D6FE100D841E0 /* libxml2.tbd */,
 				8F16DD331F3CA4FF00A2BFBF /* libHttpServerDebug.a */,
