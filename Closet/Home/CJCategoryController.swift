@@ -14,6 +14,7 @@ private let kCJCategoryTableViewCellReuseIdentifier = "kCJCategoryTableViewCellR
 
 protocol CJCategoryControllerDelegate {
     func closePannel() -> Void
+    func showCategoryManage() -> Void
 }
 
 class CJCategoryController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -48,8 +49,10 @@ class CJCategoryController: UIViewController, UITableViewDataSource, UITableView
         self.headerContentView.backgroundColor = UIColor.lightGray
         self.pannelView.addSubview(self.headerContentView)
         
+        // “分类”
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.font = UIFont.systemFont(ofSize: 18)
         titleLabel.text = "分类"
         titleLabel.textColor = UIColor.white
         self.headerContentView.addSubview(titleLabel)
@@ -57,6 +60,18 @@ class CJCategoryController: UIViewController, UITableViewDataSource, UITableView
         self.headerContentView.addConstraints([
             NSLayoutConstraint.init(item: titleLabel, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self.headerContentView, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0),
             NSLayoutConstraint.init(item: titleLabel, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: self.headerContentView, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 10)])
+        
+        // “管理“
+        let manageButton = UIButton.init(type: UIButtonType.custom)
+        manageButton.translatesAutoresizingMaskIntoConstraints = false
+        manageButton.setTitle("管理", for: UIControlState.normal)
+        manageButton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+        manageButton.addTarget(self, action: #selector(manageButtonPressed), for: UIControlEvents.touchUpInside)
+        self.headerContentView.addSubview(manageButton)
+        
+        self.headerContentView.addConstraints([
+            NSLayoutConstraint.init(item: manageButton, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.headerContentView, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: -17),
+            NSLayoutConstraint.init(item: manageButton, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: titleLabel, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0)])
         
         // tableView
         self.tableView = UITableView()
@@ -105,6 +120,10 @@ class CJCategoryController: UIViewController, UITableViewDataSource, UITableView
         }) { (Bool) in
             self.delegate?.closePannel()
         }
+    }
+    
+    func manageButtonPressed() {
+        self.delegate?.showCategoryManage()
     }
     
     // UITableViewDataSource

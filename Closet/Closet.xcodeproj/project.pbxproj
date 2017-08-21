@@ -13,6 +13,8 @@
 		8F18585A1F03EADF00817368 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F1858511F03EADE00817368 /* LaunchScreen.storyboard */; };
 		8F18585B1F03EADF00817368 /* CJAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1858531F03EADE00817368 /* CJAppDelegate.swift */; };
 		8F18585C1F03EADF00817368 /* CJRootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1858541F03EADE00817368 /* CJRootController.swift */; };
+		8F4CFF2B1F4AD99000AC817B /* CJCategoryManageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4CFF2A1F4AD99000AC817B /* CJCategoryManageController.swift */; };
+		8F4CFF2D1F4AE6AC00AC817B /* CJCategoryAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4CFF2C1F4AE6AC00AC817B /* CJCategoryAddController.swift */; };
 		8FB6F7FF1F05EFBC00786297 /* CJHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6F7FE1F05EFBC00786297 /* CJHomeController.swift */; };
 		8FB6F8011F05F08400786297 /* CJCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6F8001F05F08400786297 /* CJCategoryController.swift */; };
 		8FB6F8031F05F0BC00786297 /* CJExhibitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6F8021F05F0BC00786297 /* CJExhibitController.swift */; };
@@ -33,6 +35,8 @@
 		8F1858521F03EADE00817368 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F1858531F03EADE00817368 /* CJAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJAppDelegate.swift; sourceTree = "<group>"; };
 		8F1858541F03EADE00817368 /* CJRootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJRootController.swift; sourceTree = "<group>"; };
+		8F4CFF2A1F4AD99000AC817B /* CJCategoryManageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJCategoryManageController.swift; sourceTree = "<group>"; };
+		8F4CFF2C1F4AE6AC00AC817B /* CJCategoryAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJCategoryAddController.swift; sourceTree = "<group>"; };
 		8FB6F7FE1F05EFBC00786297 /* CJHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJHomeController.swift; sourceTree = "<group>"; };
 		8FB6F8001F05F08400786297 /* CJCategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJCategoryController.swift; sourceTree = "<group>"; };
 		8FB6F8021F05F0BC00786297 /* CJExhibitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJExhibitController.swift; sourceTree = "<group>"; };
@@ -93,9 +97,19 @@
 				8F1858541F03EADE00817368 /* CJRootController.swift */,
 				8F13445A1F3B3130008E86CF /* Database */,
 				8FB6F7FD1F05EFBC00786297 /* Home */,
+				8F4CFF271F4AD8FD00AC817B /* Category */,
 				8FB6F8051F05F15200786297 /* Supporting Files */,
 			);
 			name = Closet;
+			sourceTree = "<group>";
+		};
+		8F4CFF271F4AD8FD00AC817B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				8F4CFF2A1F4AD99000AC817B /* CJCategoryManageController.swift */,
+				8F4CFF2C1F4AE6AC00AC817B /* CJCategoryAddController.swift */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		8FB6F7FD1F05EFBC00786297 /* Home */ = {
@@ -211,7 +225,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F4CFF2D1F4AE6AC00AC817B /* CJCategoryAddController.swift in Sources */,
 				8FB6F8011F05F08400786297 /* CJCategoryController.swift in Sources */,
+				8F4CFF2B1F4AD99000AC817B /* CJCategoryManageController.swift in Sources */,
 				8F18585C1F03EADF00817368 /* CJRootController.swift in Sources */,
 				8F13445E1F3B3160008E86CF /* CJDBManager.swift in Sources */,
 				8F18585B1F03EADF00817368 /* CJAppDelegate.swift in Sources */,

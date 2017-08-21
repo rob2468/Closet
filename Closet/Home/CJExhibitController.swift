@@ -51,6 +51,9 @@ class CJExhibitController: UIViewController, UICollectionViewDataSource, UIColle
         let flowLayout = UICollectionViewFlowLayout.init()
         flowLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
         self.collectionView = UICollectionView.init(frame: frame, collectionViewLayout: flowLayout)
+        if #available(iOS 11.0, *) {
+            self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentBehavior.never
+        }
         self.collectionView.autoresizingMask = [UIViewAutoresizing.flexibleWidth, .flexibleHeight]
         self.collectionView.backgroundColor = UIColor.white
         self.collectionView.dataSource = self

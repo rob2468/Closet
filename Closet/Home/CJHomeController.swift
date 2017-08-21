@@ -24,6 +24,7 @@ class CJHomeController: UIViewController, CJCategoryControllerDelegate {
         self.exhibitController.view.frame = self.view.bounds
         self.exhibitController.view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, .flexibleHeight]
         self.view.addSubview(self.exhibitController.view)
+        self.addChildViewController(self.exhibitController)
 
         // expandButton
         self.expandButton = UIButton(type: UIButtonType.custom)
@@ -47,14 +48,19 @@ class CJHomeController: UIViewController, CJCategoryControllerDelegate {
         self.categoryController.view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, .flexibleHeight]
         self.view.addSubview(self.categoryController.view)
         self.addChildViewController(self.categoryController)
-        
-//        BDHttpServerManager.startHttpServer();
     }
+    
+    // MARK: CJCategoryControllerDelegate
     
     func closePannel() {
         // 关闭分类面板
         self.categoryController.view.removeFromSuperview()
         self.categoryController = nil
+    }
+    
+    func showCategoryManage() {
+        let manageController = CJCategoryManageController()
+        self.navigationController?.pushViewController(manageController, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
