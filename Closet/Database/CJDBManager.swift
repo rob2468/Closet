@@ -9,12 +9,13 @@
 import UIKit
 
 private let kCurrentVersion = 1
-private let kTABLECATEGORY = "category"
-private let kCATEGORYFIELDID = "id"
-private let kCATEGORYFIELDNAME = "name"
 
 class CJDBManager: NSObject {
     static let sharedInstance = CJDBManager()
+    static let kTABLECATEGORY = "category"
+    static let kCATEGORYFIELDID = "id"
+    static let kCATEGORYFIELDNAME = "name"
+
     var dbFilePath: URL!
     var databaseQueue: FMDatabaseQueue!
     
@@ -38,30 +39,6 @@ class CJDBManager: NSObject {
         }
         // 数据库升级
         self.upgradeDatabaseFromVersion(version)
-        
-//        db = FMDatabase(url: dbFilePath)
-//        guard db.open() else {
-//            print("Unable to open database")
-//            return
-//        }
-        
-//        do {
-//            try db.executeUpdate("create table clothes_item (x text, y text, z text)", values: nil)
-//            try db.executeUpdate("create table clothes_category ()", values: nil)
-//            try database.executeUpdate("insert into test (x, y, z) values (?, ?, ?)", values: ["a", "b", "c"])
-//            try database.executeUpdate("insert into test (x, y, z) values (?, ?, ?)", values: ["e", "f", "g"])
-//
-//            let rs = try database.executeQuery("select x, y, z from test", values: nil)
-//            while rs.next() {
-//                if let x = rs.string(forColumn: "x"), let y = rs.string(forColumn: "y"), let z = rs.string(forColumn: "z") {
-//                    print("x = \(x); y = \(y); z = \(z)")
-//                }
-//            }
-//        } catch {
-//            print("failed: \(error.localizedDescription)")
-//        }
-        
-//        db.close()
     }
     
     func upgradeDatabaseFromVersion(_ version: Int) -> Void {
@@ -69,7 +46,7 @@ class CJDBManager: NSObject {
         for i in version..<kCurrentVersion {
             if i == 0 {
                 self.databaseQueue.inDatabase({ (db) in
-                    let stat = "CREATE TABLE \(kTABLECATEGORY) (\(kCATEGORYFIELDID) INTEGER PRIMARY KEY AUTOINCREMENT, \(kCATEGORYFIELDNAME) text);"
+                    let stat = "CREATE TABLE \(CJDBManager.kTABLECATEGORY) (\(CJDBManager.kCATEGORYFIELDID) INTEGER PRIMARY KEY AUTOINCREMENT, \(CJDBManager.kCATEGORYFIELDNAME) text);"
                     try? db.executeUpdate(stat, values: nil)
                 })
             }

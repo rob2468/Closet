@@ -10,8 +10,7 @@ import UIKit
 private let kHeaderContentViewHeight = 64.0     // 头部引导视图高度
 
 protocol CJCategoryAddControllerDelegate {
-    func onAddControllerCancel() -> Void
-    func onAddControllerDone() -> Void
+    func onAddControllerDismiss() -> Void
 }
 
 class CJCategoryAddController: UIViewController {
@@ -95,11 +94,24 @@ class CJCategoryAddController: UIViewController {
     }
 
     func cancelButtonPressed() -> Void {
-        self.delegate?.onAddControllerCancel()
+        self.delegate?.onAddControllerDismiss()
     }
     
     func doneButtonPressed() -> Void {
-        self.delegate?.onAddControllerDone()
+        var categoryName = self.categoryNameTextField.text
+        categoryName = categoryName?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        if let name = categoryName {
+            if !name.isEmpty {
+                let databaseQueue = CJDBManager.sharedInstance.databaseQueue
+                databaseQueue?.inDatabase({ (db) in
+                    let tableName = CJDBManager.kTABLECATEGORY
+                    let nameField = CJDBManager.kCATEGORYFIELDNAME
+                    let stat = "INSERT INTO \(tableName) (\(nameField)) VALUES ('\(name)');"
+                    try? db.executeUpdate(stat, values: nil)
+                })
+                self.delegate?.onAddControllerDismiss()
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {

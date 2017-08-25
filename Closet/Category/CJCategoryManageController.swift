@@ -94,16 +94,11 @@ class CJCategoryManageController: UIViewController, CJCategoryAddControllerDeleg
     
     // MARK: CJCategoryAddControllerDelegate
     
-    func onAddControllerCancel() {
+    func onAddControllerDismiss() {
         let rootController = UIApplication.shared.keyWindow?.rootViewController
         rootController?.dismiss(animated: true, completion: nil)
     }
     
-    func onAddControllerDone() {
-        let rootController = UIApplication.shared.keyWindow?.rootViewController
-        rootController?.dismiss(animated: true, completion: nil)
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
