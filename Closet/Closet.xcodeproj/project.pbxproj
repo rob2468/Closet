@@ -349,7 +349,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6UGZ533E78;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../HttpServerDebug/HttpServerDebug\"";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../HttpServerDebug/HttpServerDebug\"",
+					"\"$(SRCROOT)/../HttpServerDebug/ThirdParties/FMDB\"/**",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -371,7 +374,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6UGZ533E78;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../HttpServerDebug/HttpServerDebug\"";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../HttpServerDebug/HttpServerDebug\"",
+					"\"$(SRCROOT)/../HttpServerDebug/ThirdParties/FMDB\"/**",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
