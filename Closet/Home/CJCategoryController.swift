@@ -29,25 +29,7 @@ class CJCategoryController: UIViewController, UITableViewDataSource, UITableView
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         // 数据库检索所有分类
-        var dataList = [CJCategoryDataModel]()
-        let databaseQueue = CJDBManager.sharedInstance.databaseQueue
-        databaseQueue?.inDatabase({ (db) in
-            let tableCategory = CJDBManager.kTABLECATEGORY
-            let stat = "SELECT * FROM \(tableCategory);"
-            let resultSet = try? db.executeQuery(stat, values: nil)
-            if let rs = resultSet {
-                let categoryFieldName = CJDBManager.kCATEGORYFIELDNAME
-                while (rs.next()) {
-                    let name = rs.string(forColumn: categoryFieldName)
-                    let category = CJCategoryDataModel()
-                    if let n = name {
-                        category.name = n
-                    }
-                    dataList.append(category)
-                }
-            }
-        })
-        self.dataList = dataList
+        self.dataList = CJDBCategoryManager.fetchAllCategories()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     

@@ -14,12 +14,14 @@
 		8F18585B1F03EADF00817368 /* CJAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1858531F03EADE00817368 /* CJAppDelegate.swift */; };
 		8F18585C1F03EADF00817368 /* CJRootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1858541F03EADE00817368 /* CJRootController.swift */; };
 		8F4B8EC61F63938600A3938D /* CJCategoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4B8EC51F63938600A3938D /* CJCategoryDataModel.swift */; };
+		8F4B8EC81F63996700A3938D /* CJDBCategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4B8EC71F63996700A3938D /* CJDBCategoryManager.swift */; };
 		8F4CFF2B1F4AD99000AC817B /* CJCategoryManageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4CFF2A1F4AD99000AC817B /* CJCategoryManageController.swift */; };
 		8F4CFF2D1F4AE6AC00AC817B /* CJCategoryAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4CFF2C1F4AE6AC00AC817B /* CJCategoryAddController.swift */; };
 		8FB6F7FF1F05EFBC00786297 /* CJHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6F7FE1F05EFBC00786297 /* CJHomeController.swift */; };
 		8FB6F8011F05F08400786297 /* CJCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6F8001F05F08400786297 /* CJCategoryController.swift */; };
 		8FB6F8031F05F0BC00786297 /* CJExhibitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6F8021F05F0BC00786297 /* CJExhibitController.swift */; };
 		8FB6F8071F05F15200786297 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FB6F8061F05F15200786297 /* Info.plist */; };
+		8FCA6F9C1F639E9800AFCC12 /* CJCategoryManageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCA6F9B1F639E9800AFCC12 /* CJCategoryManageCell.swift */; };
 		8FEFE7041F3D697000D841E0 /* HttpServerDebug.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8FEFE7031F3D697000D841E0 /* HttpServerDebug.bundle */; };
 		8FEFE7091F3D6FE100D841E0 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEFE7081F3D6FE100D841E0 /* libxml2.tbd */; };
 		8FF95F291F4096A600DDC97F /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF95F281F4096A600DDC97F /* libFMDB.a */; };
@@ -37,12 +39,14 @@
 		8F1858531F03EADE00817368 /* CJAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJAppDelegate.swift; sourceTree = "<group>"; };
 		8F1858541F03EADE00817368 /* CJRootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJRootController.swift; sourceTree = "<group>"; };
 		8F4B8EC51F63938600A3938D /* CJCategoryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJCategoryDataModel.swift; sourceTree = "<group>"; };
+		8F4B8EC71F63996700A3938D /* CJDBCategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJDBCategoryManager.swift; sourceTree = "<group>"; };
 		8F4CFF2A1F4AD99000AC817B /* CJCategoryManageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJCategoryManageController.swift; sourceTree = "<group>"; };
 		8F4CFF2C1F4AE6AC00AC817B /* CJCategoryAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJCategoryAddController.swift; sourceTree = "<group>"; };
 		8FB6F7FE1F05EFBC00786297 /* CJHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJHomeController.swift; sourceTree = "<group>"; };
 		8FB6F8001F05F08400786297 /* CJCategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJCategoryController.swift; sourceTree = "<group>"; };
 		8FB6F8021F05F0BC00786297 /* CJExhibitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJExhibitController.swift; sourceTree = "<group>"; };
 		8FB6F8061F05F15200786297 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FCA6F9B1F639E9800AFCC12 /* CJCategoryManageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJCategoryManageCell.swift; sourceTree = "<group>"; };
 		8FD708E11EFA61D900E0547C /* Closet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Closet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FEFE7031F3D697000D841E0 /* HttpServerDebug.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = HttpServerDebug.bundle; path = ../HttpServerDebug/HttpServerDebug/Resources/HttpServerDebug.bundle; sourceTree = "<group>"; };
 		8FEFE7081F3D6FE100D841E0 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
@@ -86,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				8F13445D1F3B3160008E86CF /* CJDBManager.swift */,
+				8F4B8EC71F63996700A3938D /* CJDBCategoryManager.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				8F4CFF2A1F4AD99000AC817B /* CJCategoryManageController.swift */,
+				8FCA6F9B1F639E9800AFCC12 /* CJCategoryManageCell.swift */,
 				8F4CFF2C1F4AE6AC00AC817B /* CJCategoryAddController.swift */,
 			);
 			path = Category;
@@ -244,6 +250,8 @@
 				8F13445E1F3B3160008E86CF /* CJDBManager.swift in Sources */,
 				8F18585B1F03EADF00817368 /* CJAppDelegate.swift in Sources */,
 				8FB6F7FF1F05EFBC00786297 /* CJHomeController.swift in Sources */,
+				8F4B8EC81F63996700A3938D /* CJDBCategoryManager.swift in Sources */,
+				8FCA6F9C1F639E9800AFCC12 /* CJCategoryManageCell.swift in Sources */,
 				8FB6F8031F05F0BC00786297 /* CJExhibitController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

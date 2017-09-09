@@ -10,12 +10,24 @@ import UIKit
 private let kHeaderContentViewHeight = 64.0     // 头部引导视图高度
 private let kFooterContentViewHeight = 44.0
 private let kAddButtonEdgeLength = 34.0
+private let kCollectionViewCellReuseIdentifier = "kCollectionViewCellReuseIdentifier"
 
-class CJCategoryManageController: UIViewController, CJCategoryAddControllerDelegate {
+class CJCategoryManageController: UIViewController, CJCategoryAddControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     var headerContentView: UIView!
     var footerContentView: UIView!
-
+    var collectionView: UICollectionView!
+    var dataList: [CJCategoryDataModel]
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        self.dataList = CJDBCategoryManager.fetchAllCategories()
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
@@ -79,6 +91,20 @@ class CJCategoryManageController: UIViewController, CJCategoryAddControllerDeleg
             NSLayoutConstraint.init(item: addButton, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: self.footerContentView, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0),
             NSLayoutConstraint.init(item: addButton, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: self.footerContentView, attribute: NSLayoutAttribute.width, multiplier: 0, constant: CGFloat(kAddButtonEdgeLength)),
             NSLayoutConstraint.init(item: addButton, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: self.footerContentView, attribute: NSLayoutAttribute.height, multiplier: 0, constant: CGFloat(kAddButtonEdgeLength))])
+        
+        // collectionView
+        frame = self.view.bounds
+        frame.origin.y = CGFloat(kHeaderContentViewHeight)
+        frame.size.height -= CGFloat(kHeaderContentViewHeight + kFooterContentViewHeight)
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = UICollectionViewScrollDirection.vertical
+        self.collectionView = UICollectionView.init(frame: frame, collectionViewLayout: flowLayout)
+        self.collectionView.backgroundColor = UIColor.white
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.view.addSubview(self.collectionView)
+        
+        self.collectionView.register(CJCategoryManageCell.self, forCellWithReuseIdentifier: kCollectionViewCellReuseIdentifier)
     }
     
     func doneButtonPressed() -> Void {
@@ -98,6 +124,37 @@ class CJCategoryManageController: UIViewController, CJCategoryAddControllerDeleg
         let rootController = UIApplication.shared.keyWindow?.rootViewController
         rootController?.dismiss(animated: true, completion: nil)
     }
+    
+    // MARK: UICollectionViewDataSource
+    
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.dataList.count
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCollectionViewCellReuseIdentifier, for: indexPath) as! CJCategoryManageCell
+        
+        let item = indexPath.item
+        let category = self.dataList[item]
+        cell.nameLabel.text = category.name
+        return cell
+    }
+    
+    // MARK: UICollectionViewDelegateFlowLayout
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 80, height: 80)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let top = 10.0
+        let left = 17.0
+        let bottom = 10.0
+        let right = 17.0
+        return UIEdgeInsetsMake(CGFloat(top), CGFloat(left), CGFloat(bottom), CGFloat(right))
+    }
+    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
