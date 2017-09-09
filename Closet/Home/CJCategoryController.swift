@@ -25,7 +25,35 @@ class CJCategoryController: UIViewController, UITableViewDataSource, UITableView
     
     var closeButton: UIButton!
     var delegate: CJCategoryControllerDelegate?
-    let dataList = ["全部", "外套", "裤子", "袜子", "鞋子"]
+    var dataList = [CJCategoryDataModel]()
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        // 数据库检索所有分类
+        var dataList = [CJCategoryDataModel]()
+        let databaseQueue = CJDBManager.sharedInstance.databaseQueue
+        databaseQueue?.inDatabase({ (db) in
+            let tableCategory = CJDBManager.kTABLECATEGORY
+            let stat = "SELECT * FROM \(tableCategory);"
+            let resultSet = try? db.executeQuery(stat, values: nil)
+            if let rs = resultSet {
+                let categoryFieldName = CJDBManager.kCATEGORYFIELDNAME
+                while (rs.next()) {
+                    let name = rs.string(forColumn: categoryFieldName)
+                    let category = CJCategoryDataModel()
+                    if let n = name {
+                        category.name = n
+                    }
+                    dataList.append(category)
+                }
+            }
+        })
+        self.dataList = dataList
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -135,8 +163,8 @@ class CJCategoryController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kCJCategoryTableViewCellReuseIdentifier, for: indexPath)
         let row = indexPath.row
-        let title = self.dataList[row]
-        cell.textLabel?.text = title
+        let category = self.dataList[row]
+        cell.textLabel?.text = category.name
         return cell
     }
     
