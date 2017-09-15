@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol CJCategoryManageCellDelegate: AnyObject {
+    func onManageCellDeleteButtonPressed(_ cell: CJCategoryManageCell)
+}
+
 class CJCategoryManageCell: UICollectionViewCell {
     var nameLabel: UILabel!
     var deleteButton: UIButton!
+    weak var delegate: CJCategoryManageCellDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,14 +37,17 @@ class CJCategoryManageCell: UICollectionViewCell {
         self.deleteButton.translatesAutoresizingMaskIntoConstraints = false
         self.deleteButton.setTitle("X", for: UIControlState.normal)
         self.deleteButton.setTitleColor(UIColor.red, for: UIControlState.normal)
+        self.deleteButton.addTarget(self, action: #selector(deleteButtonPressed), for: UIControlEvents.touchUpInside)
         self.contentView.addSubview(self.deleteButton)
         
         self.contentView.addConstraints(
             [NSLayoutConstraint.init(item: self.deleteButton, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.contentView, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0),
              NSLayoutConstraint.init(item: self.deleteButton, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.contentView, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)])
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    func deleteButtonPressed() -> Void {
+        self.delegate?.onManageCellDeleteButtonPressed(self)
     }
 }

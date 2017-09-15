@@ -9,5 +9,6 @@
 import UIKit
 
 class CJCategoryDataModel: NSObject {
-    var name: String = ""
+    var id: Int = 0             // 唯一标识符
+    var name: String = ""       // 分类名
 }

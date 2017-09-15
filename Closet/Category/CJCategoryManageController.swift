@@ -12,7 +12,7 @@ private let kFooterContentViewHeight = 44.0
 private let kAddButtonEdgeLength = 34.0
 private let kCollectionViewCellReuseIdentifier = "kCollectionViewCellReuseIdentifier"
 
-class CJCategoryManageController: UIViewController, CJCategoryAddControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class CJCategoryManageController: UIViewController, CJCategoryAddControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CJCategoryManageCellDelegate {
 
     var headerContentView: UIView!
     var footerContentView: UIView!
@@ -133,6 +133,7 @@ class CJCategoryManageController: UIViewController, CJCategoryAddControllerDeleg
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCollectionViewCellReuseIdentifier, for: indexPath) as! CJCategoryManageCell
+        cell.delegate = self
         
         let item = indexPath.item
         let category = self.dataList[item]
@@ -154,7 +155,31 @@ class CJCategoryManageController: UIViewController, CJCategoryAddControllerDeleg
         return UIEdgeInsetsMake(CGFloat(top), CGFloat(left), CGFloat(bottom), CGFloat(right))
     }
     
-
+    // MARK: CJCategoryManageCellDelegate
+    
+    func onManageCellDeleteButtonPressed(_ cell: CJCategoryManageCell) {
+        let idxPath = self.collectionView.indexPath(for: cell)
+        if let indexPath = idxPath {
+            // 获取分类
+            let item = indexPath.item
+            let category = self.dataList[item]
+            let id = category.id
+            let name = category.name
+            
+            // 二次确认
+            let alert = UIAlertController.init(title: nil, message: "确定删除分类“\(name)”？", preferredStyle: UIAlertControllerStyle.alert)
+            let cancelAction = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel, handler: { (action) in
+                return
+            })
+            alert.addAction(cancelAction)
+            let confirmAction = UIAlertAction.init(title: "确定", style: UIAlertActionStyle.destructive, handler: { (action) in
+                // 删除数据库中指定分类
+                CJDBCategoryManager.deleteCategoryWithID(id)
+            })
+            alert.addAction(confirmAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
