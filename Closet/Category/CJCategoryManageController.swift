@@ -107,6 +107,21 @@ class CJCategoryManageController: UIViewController, CJCategoryAddControllerDeleg
         self.collectionView.register(CJCategoryManageCell.self, forCellWithReuseIdentifier: kCollectionViewCellReuseIdentifier)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    
+    /// 重新读取分类数据，并刷新视图
+    func reloadCollectionView() {
+        self.dataList = CJDBCategoryManager.fetchAllCategories()
+        self.collectionView.reloadData()
+    }
+    
     func doneButtonPressed() -> Void {
         self.navigationController?.popViewController(animated: true)
     }
@@ -121,8 +136,12 @@ class CJCategoryManageController: UIViewController, CJCategoryAddControllerDeleg
     // MARK: CJCategoryAddControllerDelegate
     
     func onAddControllerDismiss() {
+        // 移除添加分类视图
         let rootController = UIApplication.shared.keyWindow?.rootViewController
         rootController?.dismiss(animated: true, completion: nil)
+        
+        // 重新加载数据并更新视图
+        self.reloadCollectionView()
     }
     
     // MARK: UICollectionViewDataSource
@@ -175,6 +194,10 @@ class CJCategoryManageController: UIViewController, CJCategoryAddControllerDeleg
             let confirmAction = UIAlertAction.init(title: "确定", style: UIAlertActionStyle.destructive, handler: { (action) in
                 // 删除数据库中指定分类
                 CJDBCategoryManager.deleteCategoryWithID(id)
+                // 删除内存中指定分类
+                self.dataList.remove(at: item)
+                // 更新视图
+                self.collectionView.deleteItems(at: [indexPath])
             })
             alert.addAction(confirmAction)
             let rootController = CJRootController.fetchRootController()
