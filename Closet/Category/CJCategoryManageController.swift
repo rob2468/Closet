@@ -114,7 +114,7 @@ class CJCategoryManageController: UIViewController, CJCategoryAddControllerDeleg
     func addButtonPressed() -> Void {
         let addController = CJCategoryAddController()
         addController.delegate = self
-        let rootController = UIApplication.shared.keyWindow?.rootViewController
+        let rootController = CJRootController.fetchRootController()
         rootController?.present(addController, animated: true, completion: nil)
     }
     
@@ -177,7 +177,8 @@ class CJCategoryManageController: UIViewController, CJCategoryAddControllerDeleg
                 CJDBCategoryManager.deleteCategoryWithID(id)
             })
             alert.addAction(confirmAction)
-            self.present(alert, animated: true, completion: nil)
+            let rootController = CJRootController.fetchRootController()
+            rootController?.present(alert, animated: true, completion: nil)
         }
     }
     

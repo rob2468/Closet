@@ -22,6 +22,11 @@ class CJRootController: UIViewController {
         self.rootNav.isNavigationBarHidden = true
         self.view.addSubview(self.rootNav.view);
     }
+    
+    class func fetchRootController() -> CJRootController? {
+        let rootController = UIApplication.shared.keyWindow?.rootViewController as? CJRootController
+        return rootController
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

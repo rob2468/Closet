@@ -9,7 +9,7 @@
 import UIKit
 private let kHeaderContentViewHeight = 64.0     // 头部引导视图高度
 
-protocol CJCategoryAddControllerDelegate {
+protocol CJCategoryAddControllerDelegate: AnyObject {
     func onAddControllerDismiss() -> Void
 }
 
@@ -18,7 +18,7 @@ class CJCategoryAddController: UIViewController {
     var headerContentView: UIView!
     var categoryNameTextField: UITextField!
     
-    var delegate: CJCategoryAddControllerDelegate?
+    weak var delegate: CJCategoryAddControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
