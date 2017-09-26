@@ -139,7 +139,7 @@ class CJCategoryManageController: UIViewController, CJCategoryEditControllerDele
     
     // MARK: CJCategoryEditControllerDelegate
     
-    func onAddControllerDismiss() {
+    func onCategoryEditControllerDismiss() {
         // 移除添加分类视图
         let rootController = UIApplication.shared.keyWindow?.rootViewController
         rootController?.dismiss(animated: true, completion: nil)

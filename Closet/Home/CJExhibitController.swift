@@ -40,6 +40,8 @@ class CJExhibitCollectionViewCell: UICollectionViewCell {
 class CJExhibitController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     var collectionView: UICollectionView!
+    var addProductButton: UIButton!                 // 添加单品按钮
+
     var dataList: [String] = ["a", "b", "c"]
     
     override func viewDidLoad() {
@@ -62,6 +64,31 @@ class CJExhibitController: UIViewController, UICollectionViewDataSource, UIColle
         self.view.addSubview(self.collectionView)
         
         self.collectionView.register(CJExhibitCollectionViewCell.self, forCellWithReuseIdentifier: kCollectionViewCellReuseIdentifier)
+        
+        // addProductButton
+        self.addProductButton = UIButton(type: UIButtonType.custom)
+        self.addProductButton.translatesAutoresizingMaskIntoConstraints = false
+        self.addProductButton.backgroundColor = UIColor.blue
+        self.addProductButton.addTarget(self, action: #selector(addProductButtonPressed), for: UIControlEvents.touchUpInside)
+        self.view.addSubview(self.addProductButton)
+        
+        let kAddProductButtonEdgeLength: CGFloat = 50
+        self.addProductButton.layer.cornerRadius = kAddProductButtonEdgeLength / 2.0
+        self.addProductButton.layer.shadowColor = UIColor.black.cgColor
+        self.addProductButton.layer.shadowOpacity = 0.5
+        self.addProductButton.layer.shadowOffset = CGSize.init(width: 0, height: 5)
+        self.view.addConstraints(
+            [NSLayoutConstraint.init(item: self.addProductButton, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: -17),
+             NSLayoutConstraint.init(item: self.addProductButton, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: -17),
+             NSLayoutConstraint.init(item: self.addProductButton, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.width, multiplier: 0, constant: kAddProductButtonEdgeLength),
+             NSLayoutConstraint.init(item: self.addProductButton, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.height, multiplier: 0, constant: kAddProductButtonEdgeLength)])
+    }
+    
+    func addProductButtonPressed() {
+        let addController = CJProductEditController()
+//        addController.delegate = self
+        let rootController = CJRootController.fetchRootController()
+        rootController?.present(addController, animated: true, completion: nil)
     }
     
     // UICollectionViewDataSource

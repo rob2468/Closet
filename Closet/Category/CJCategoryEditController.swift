@@ -10,7 +10,7 @@ import UIKit
 private let kHeaderContentViewHeight = 64.0     // 头部引导视图高度
 
 protocol CJCategoryEditControllerDelegate: AnyObject {
-    func onAddControllerDismiss() -> Void
+    func onCategoryEditControllerDismiss() -> Void
 }
 
 class CJCategoryEditController: UIViewController {
@@ -115,7 +115,7 @@ class CJCategoryEditController: UIViewController {
     }
 
     func cancelButtonPressed() -> Void {
-        self.delegate?.onAddControllerDismiss()
+        self.delegate?.onCategoryEditControllerDismiss()
     }
     
     func doneButtonPressed() -> Void {
@@ -142,7 +142,7 @@ class CJCategoryEditController: UIViewController {
                 // 更新分类
                 CJDBCategoryManager.updateCategory(self.category!)
             }
-            self.delegate?.onAddControllerDismiss()
+            self.delegate?.onCategoryEditControllerDismiss()
         }
     }
     
