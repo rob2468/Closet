@@ -85,7 +85,7 @@ class CJExhibitController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     func addProductButtonPressed() {
-        let addController = CJProductEditController()
+        let addController = CJProductItemEditController.init(withProductItem: nil)
 //        addController.delegate = self
         let rootController = CJRootController.fetchRootController()
         rootController?.present(addController, animated: true, completion: nil)

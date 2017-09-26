@@ -22,7 +22,8 @@
 		8FB6F8031F05F0BC00786297 /* CJExhibitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6F8021F05F0BC00786297 /* CJExhibitController.swift */; };
 		8FB6F8071F05F15200786297 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FB6F8061F05F15200786297 /* Info.plist */; };
 		8FCA6F9C1F639E9800AFCC12 /* CJCategoryManageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCA6F9B1F639E9800AFCC12 /* CJCategoryManageCell.swift */; };
-		8FE622BF1F7A389600739A2C /* CJProductEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE622BE1F7A389600739A2C /* CJProductEditController.swift */; };
+		8FE622BF1F7A389600739A2C /* CJProductItemEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE622BE1F7A389600739A2C /* CJProductItemEditController.swift */; };
+		8FE622C11F7A3C0700739A2C /* CJProductItemDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE622C01F7A3C0700739A2C /* CJProductItemDataModel.swift */; };
 		8FEFE7041F3D697000D841E0 /* HttpServerDebug.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8FEFE7031F3D697000D841E0 /* HttpServerDebug.bundle */; };
 		8FEFE7091F3D6FE100D841E0 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEFE7081F3D6FE100D841E0 /* libxml2.tbd */; };
 		8FF95F291F4096A600DDC97F /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF95F281F4096A600DDC97F /* libFMDB.a */; };
@@ -49,7 +50,8 @@
 		8FB6F8061F05F15200786297 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FCA6F9B1F639E9800AFCC12 /* CJCategoryManageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJCategoryManageCell.swift; sourceTree = "<group>"; };
 		8FD708E11EFA61D900E0547C /* Closet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Closet.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FE622BE1F7A389600739A2C /* CJProductEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJProductEditController.swift; sourceTree = "<group>"; };
+		8FE622BE1F7A389600739A2C /* CJProductItemEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJProductItemEditController.swift; sourceTree = "<group>"; };
+		8FE622C01F7A3C0700739A2C /* CJProductItemDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJProductItemDataModel.swift; sourceTree = "<group>"; };
 		8FEFE7031F3D697000D841E0 /* HttpServerDebug.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = HttpServerDebug.bundle; path = ../HttpServerDebug/HttpServerDebug/Resources/HttpServerDebug.bundle; sourceTree = "<group>"; };
 		8FEFE7081F3D6FE100D841E0 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		8FF95F281F4096A600DDC97F /* libFMDB.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFMDB.a; path = "../../../Library/Developer/Xcode/DerivedData/Closet-cqlnlhkclkznrocfxsuxkhtnzpov/Build/Products/Debug-iphonesimulator/libFMDB.a"; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				8F4B8EC51F63938600A3938D /* CJCategoryDataModel.swift */,
+				8FE622C01F7A3C0700739A2C /* CJProductItemDataModel.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -172,7 +175,7 @@
 		8FE622BD1F7A383B00739A2C /* ProductItem */ = {
 			isa = PBXGroup;
 			children = (
-				8FE622BE1F7A389600739A2C /* CJProductEditController.swift */,
+				8FE622BE1F7A389600739A2C /* CJProductItemEditController.swift */,
 			);
 			path = ProductItem;
 			sourceTree = "<group>";
@@ -261,8 +264,9 @@
 				8F13445E1F3B3160008E86CF /* CJDBManager.swift in Sources */,
 				8F18585B1F03EADF00817368 /* CJAppDelegate.swift in Sources */,
 				8FB6F7FF1F05EFBC00786297 /* CJHomeController.swift in Sources */,
-				8FE622BF1F7A389600739A2C /* CJProductEditController.swift in Sources */,
+				8FE622BF1F7A389600739A2C /* CJProductItemEditController.swift in Sources */,
 				8F4B8EC81F63996700A3938D /* CJDBCategoryManager.swift in Sources */,
+				8FE622C11F7A3C0700739A2C /* CJProductItemDataModel.swift in Sources */,
 				8FCA6F9C1F639E9800AFCC12 /* CJCategoryManageCell.swift in Sources */,
 				8FB6F8031F05F0BC00786297 /* CJExhibitController.swift in Sources */,
 			);
