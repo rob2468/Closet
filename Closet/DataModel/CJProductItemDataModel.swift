@@ -13,5 +13,5 @@ class CJProductItemDataModel: NSObject {
     var id: Int?                    // 唯一标识符
     var name: String = ""           // 单品名称
     var price: Double?              // 价格
-    var imageFilePath: [String]?    // 照片本地存放路径（第一张图片为默认图片）
+    var imagePath: [String]?        // 照片本地存放路径（第一张图片为默认图片）
 }

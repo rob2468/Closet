@@ -12,9 +12,16 @@ private let kCurrentVersion = 1
 
 class CJDBManager: NSObject {
     static let sharedInstance = CJDBManager()
+    // 表名
     static let kTABLECATEGORY = "category"
+    static let kTABLEPRODUCT = "product"
+    // 字段名
     static let kCATEGORYFIELDID = "id"
     static let kCATEGORYFIELDNAME = "name"
+    static let kPRODUCTFIELDID = "id"
+    static let kPRODUCTFIELDNAME = "name"
+    static let kPRODUCTFIELDPRICE = "price"
+    static let kPRODUCTFIELDIMAGEPATH = "image_path"
 
     var dbFilePath: URL!
     var databaseQueue: FMDatabaseQueue!
@@ -45,8 +52,13 @@ class CJDBManager: NSObject {
         // 数据库逐版本升级
         for i in version..<kCurrentVersion {
             if i == 0 {
-                self.databaseQueue.inDatabase({ (db) in
-                    let stat = "CREATE TABLE \(CJDBManager.kTABLECATEGORY) (\(CJDBManager.kCATEGORYFIELDID) INTEGER PRIMARY KEY AUTOINCREMENT, \(CJDBManager.kCATEGORYFIELDNAME) text);"
+                self.databaseQueue.inTransaction({ (db, rollback) in
+                    // 创建“分类”表
+                    var stat = "CREATE TABLE \(CJDBManager.kTABLECATEGORY) (\(CJDBManager.kCATEGORYFIELDID) INTEGER PRIMARY KEY AUTOINCREMENT, \(CJDBManager.kCATEGORYFIELDNAME) TEXT);"
+                    try? db.executeUpdate(stat, values: nil)
+                    
+                    // 创建“单品”表
+                    stat = "CREATE TABLE \(CJDBManager.kTABLEPRODUCT) (\(CJDBManager.kPRODUCTFIELDID) INTEGER PRIMARY KEY AUTOINCREMENT, \(CJDBManager.kPRODUCTFIELDNAME) TEXT, \(CJDBManager.kPRODUCTFIELDPRICE) REAL, \(CJDBManager.kPRODUCTFIELDIMAGEPATH) TEXT);"
                     try? db.executeUpdate(stat, values: nil)
                 })
             }
