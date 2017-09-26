@@ -133,6 +133,7 @@ class CJCategoryController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func manageButtonPressed() {
+        self.delegate?.closePannel()
         self.delegate?.showCategoryManage()
     }
     
