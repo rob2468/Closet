@@ -1,5 +1,5 @@
 //
-//  CJCategoryAddController.swift
+//  CJCategoryEditController.swift
 //  Closet
 //
 //  Created by chenjun on 21/08/2017.
@@ -9,17 +9,31 @@
 import UIKit
 private let kHeaderContentViewHeight = 64.0     // 头部引导视图高度
 
-protocol CJCategoryAddControllerDelegate: AnyObject {
+protocol CJCategoryEditControllerDelegate: AnyObject {
     func onAddControllerDismiss() -> Void
 }
 
-class CJCategoryAddController: UIViewController {
-
+class CJCategoryEditController: UIViewController {
+    // 视图
     var headerContentView: UIView!
     var categoryNameTextField: UITextField!
     
-    weak var delegate: CJCategoryAddControllerDelegate?
-
+    weak var delegate: CJCategoryEditControllerDelegate?
+    var category: CJCategoryDataModel?
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    convenience init(withCategory category: CJCategoryDataModel?) {
+        self.init(nibName: nil, bundle: nil)
+        self.category = category
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
@@ -32,11 +46,10 @@ class CJCategoryAddController: UIViewController {
         self.headerContentView.backgroundColor = UIColor.lightGray
         self.view.addSubview(self.headerContentView)
         
-        // "新增分类"titleLabel
+        // titleLabel
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.textColor = UIColor.white
-        titleLabel.text = "新增分类"
         titleLabel.font = UIFont.systemFont(ofSize: 18)
         self.headerContentView.addSubview(titleLabel)
         
@@ -91,6 +104,14 @@ class CJCategoryAddController: UIViewController {
             NSLayoutConstraint.init(item: self.categoryNameTextField, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: categoryNameLabel, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0),
             NSLayoutConstraint.init(item: self.categoryNameTextField, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: -17),
             NSLayoutConstraint.init(item: self.categoryNameTextField, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: categoryNameLabel, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0)])
+        
+        // 根据初识“分类”更新视图
+        if let category = self.category {
+            titleLabel.text = "更新分类"
+            self.categoryNameTextField.text = category.name
+        } else {
+            titleLabel.text = "新增分类"
+        }
     }
 
     func cancelButtonPressed() -> Void {
@@ -98,19 +119,30 @@ class CJCategoryAddController: UIViewController {
     }
     
     func doneButtonPressed() -> Void {
+        var isSuccess = false
+        // 解析用户输入
         var categoryName = self.categoryNameTextField.text
         categoryName = categoryName?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         if let name = categoryName {
             if !name.isEmpty {
-                let databaseQueue = CJDBManager.sharedInstance.databaseQueue
-                databaseQueue?.inDatabase({ (db) in
-                    let tableName = CJDBManager.kTABLECATEGORY
-                    let nameField = CJDBManager.kCATEGORYFIELDNAME
-                    let stat = "INSERT INTO \(tableName) (\(nameField)) VALUES ('\(name)');"
-                    try? db.executeUpdate(stat, values: nil)
-                })
-                self.delegate?.onAddControllerDismiss()
+                if self.category == nil {
+                    self.category = CJCategoryDataModel()
+                }
+                self.category!.name = name
+                
+                isSuccess = true
             }
+        }
+        
+        if isSuccess {
+            if self.category!.id == nil {
+                // 新增分类
+                CJDBCategoryManager.addCategory(self.category!)
+            } else {
+                // 更新分类
+                CJDBCategoryManager.updateCategory(self.category!)
+            }
+            self.delegate?.onAddControllerDismiss()
         }
     }
     

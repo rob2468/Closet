@@ -12,7 +12,7 @@ private let kFooterContentViewHeight = 44.0
 private let kAddButtonEdgeLength = 34.0
 private let kCollectionViewCellReuseIdentifier = "kCollectionViewCellReuseIdentifier"
 
-class CJCategoryManageController: UIViewController, CJCategoryAddControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CJCategoryManageCellDelegate {
+class CJCategoryManageController: UIViewController, CJCategoryEditControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CJCategoryManageCellDelegate {
 
     var headerContentView: UIView!
     var footerContentView: UIView!
@@ -127,13 +127,17 @@ class CJCategoryManageController: UIViewController, CJCategoryAddControllerDeleg
     }
     
     func addButtonPressed() -> Void {
-        let addController = CJCategoryAddController()
+        self.showCategoryEditVC(nil)
+    }
+    
+    func showCategoryEditVC(_ category: CJCategoryDataModel?) {
+        let addController = CJCategoryEditController.init(withCategory: category)
         addController.delegate = self
         let rootController = CJRootController.fetchRootController()
         rootController?.present(addController, animated: true, completion: nil)
     }
     
-    // MARK: CJCategoryAddControllerDelegate
+    // MARK: CJCategoryEditControllerDelegate
     
     func onAddControllerDismiss() {
         // 移除添加分类视图
@@ -158,6 +162,14 @@ class CJCategoryManageController: UIViewController, CJCategoryAddControllerDeleg
         let category = self.dataList[item]
         cell.nameLabel.text = category.name
         return cell
+    }
+    
+    // MARK: UICollectionViewDelegate
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let idx = indexPath.item
+        let category = self.dataList[idx]
+        self.showCategoryEditVC(category)
     }
     
     // MARK: UICollectionViewDelegateFlowLayout
@@ -192,12 +204,14 @@ class CJCategoryManageController: UIViewController, CJCategoryAddControllerDeleg
             })
             alert.addAction(cancelAction)
             let confirmAction = UIAlertAction.init(title: "确定", style: UIAlertActionStyle.destructive, handler: { (action) in
-                // 删除数据库中指定分类
-                CJDBCategoryManager.deleteCategoryWithID(id)
-                // 删除内存中指定分类
-                self.dataList.remove(at: item)
-                // 更新视图
-                self.collectionView.deleteItems(at: [indexPath])
+                if let localID = id {
+                    // 删除数据库中指定分类
+                    CJDBCategoryManager.deleteCategory(withID:localID)
+                    // 删除内存中指定分类
+                    self.dataList.remove(at: item)
+                    // 更新视图
+                    self.collectionView.deleteItems(at: [indexPath])
+                }
             })
             alert.addAction(confirmAction)
             let rootController = CJRootController.fetchRootController()
