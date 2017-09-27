@@ -17,6 +17,7 @@ class CJHomeController: UIViewController, CJCategoryControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.automaticallyAdjustsScrollViewInsets = false;
         self.view.backgroundColor = UIColor.white
         
         // exhibitController

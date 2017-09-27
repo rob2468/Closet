@@ -141,8 +141,34 @@ class CJProductItemEditController: UIViewController {
     }
     
     func doneButtonPressed() -> Void {
-        let rootController = UIApplication.shared.keyWindow?.rootViewController
-        rootController?.dismiss(animated: true, completion: nil)
+        var isSuccess = false
+        // 解析用户输入
+        var name = self.nameTextField.text
+        name = name?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        if let productName = name {
+            if !productName.isEmpty {
+                if self.productItem == nil {
+                    self.productItem = CJProductItemDataModel()
+                }
+                self.productItem!.name = productName;
+                
+                isSuccess = true
+            }
+        }
+        
+        if isSuccess {
+            if self.productItem!.id == nil {
+                // 新增单品
+                CJDBProductItemManager.addProductItem(self.productItem!)
+            } else {
+                // 更新单品
+                
+            }
+            
+            // 退出当前页面
+            let rootController = UIApplication.shared.keyWindow?.rootViewController
+            rootController?.dismiss(animated: true, completion: nil)
+        } 
     }
     
     override func didReceiveMemoryWarning() {

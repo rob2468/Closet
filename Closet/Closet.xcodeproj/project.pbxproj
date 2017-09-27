@@ -13,6 +13,7 @@
 		8F18585A1F03EADF00817368 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F1858511F03EADE00817368 /* LaunchScreen.storyboard */; };
 		8F18585B1F03EADF00817368 /* CJAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1858531F03EADE00817368 /* CJAppDelegate.swift */; };
 		8F18585C1F03EADF00817368 /* CJRootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1858541F03EADE00817368 /* CJRootController.swift */; };
+		8F3BA9EA1F7BA37D00AB8290 /* CJDBProductItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3BA9E91F7BA37C00AB8290 /* CJDBProductItemManager.swift */; };
 		8F4B8EC61F63938600A3938D /* CJCategoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4B8EC51F63938600A3938D /* CJCategoryDataModel.swift */; };
 		8F4B8EC81F63996700A3938D /* CJDBCategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4B8EC71F63996700A3938D /* CJDBCategoryManager.swift */; };
 		8F4CFF2B1F4AD99000AC817B /* CJCategoryManageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4CFF2A1F4AD99000AC817B /* CJCategoryManageController.swift */; };
@@ -40,6 +41,7 @@
 		8F1858521F03EADE00817368 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F1858531F03EADE00817368 /* CJAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJAppDelegate.swift; sourceTree = "<group>"; };
 		8F1858541F03EADE00817368 /* CJRootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJRootController.swift; sourceTree = "<group>"; };
+		8F3BA9E91F7BA37C00AB8290 /* CJDBProductItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJDBProductItemManager.swift; sourceTree = "<group>"; };
 		8F4B8EC51F63938600A3938D /* CJCategoryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJCategoryDataModel.swift; sourceTree = "<group>"; };
 		8F4B8EC71F63996700A3938D /* CJDBCategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJDBCategoryManager.swift; sourceTree = "<group>"; };
 		8F4CFF2A1F4AD99000AC817B /* CJCategoryManageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJCategoryManageController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			children = (
 				8F13445D1F3B3160008E86CF /* CJDBManager.swift */,
 				8F4B8EC71F63996700A3938D /* CJDBCategoryManager.swift */,
+				8F3BA9E91F7BA37C00AB8290 /* CJDBProductItemManager.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				8F18585B1F03EADF00817368 /* CJAppDelegate.swift in Sources */,
 				8FB6F7FF1F05EFBC00786297 /* CJHomeController.swift in Sources */,
 				8FE622BF1F7A389600739A2C /* CJProductItemEditController.swift in Sources */,
+				8F3BA9EA1F7BA37D00AB8290 /* CJDBProductItemManager.swift in Sources */,
 				8F4B8EC81F63996700A3938D /* CJDBCategoryManager.swift in Sources */,
 				8FE622C11F7A3C0700739A2C /* CJProductItemDataModel.swift in Sources */,
 				8FCA6F9C1F639E9800AFCC12 /* CJCategoryManageCell.swift in Sources */,
