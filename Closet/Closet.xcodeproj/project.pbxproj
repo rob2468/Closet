@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8F13445E1F3B3160008E86CF /* CJDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F13445D1F3B3160008E86CF /* CJDBManager.swift */; };
-		8F16DD341F3CA4FF00A2BFBF /* libHttpServerDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F16DD331F3CA4FF00A2BFBF /* libHttpServerDebug.a */; };
 		8F1858591F03EADE00817368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F1858501F03EADE00817368 /* Assets.xcassets */; };
 		8F18585A1F03EADF00817368 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F1858511F03EADE00817368 /* LaunchScreen.storyboard */; };
 		8F18585B1F03EADF00817368 /* CJAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1858531F03EADE00817368 /* CJAppDelegate.swift */; };
@@ -25,12 +24,14 @@
 		8FCA6F9C1F639E9800AFCC12 /* CJCategoryManageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCA6F9B1F639E9800AFCC12 /* CJCategoryManageCell.swift */; };
 		8FE622BF1F7A389600739A2C /* CJProductItemEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE622BE1F7A389600739A2C /* CJProductItemEditController.swift */; };
 		8FE622C11F7A3C0700739A2C /* CJProductItemDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE622C01F7A3C0700739A2C /* CJProductItemDataModel.swift */; };
-		8FEFE7041F3D697000D841E0 /* HttpServerDebug.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8FEFE7031F3D697000D841E0 /* HttpServerDebug.bundle */; };
 		8FEFE7091F3D6FE100D841E0 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEFE7081F3D6FE100D841E0 /* libxml2.tbd */; };
-		8FF95F291F4096A600DDC97F /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF95F281F4096A600DDC97F /* libFMDB.a */; };
-		8FF95F421F409D7200DDC97F /* libCocoaLumberjack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF95F411F409D7200DDC97F /* libCocoaLumberjack.a */; };
-		8FF95F871F413CA900DDC97F /* libCocoaAsyncSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF95F861F413CA900DDC97F /* libCocoaAsyncSocket.a */; };
-		8FF95FAA1F413DC300DDC97F /* libCocoaHttpServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF95FA91F413DC300DDC97F /* libCocoaHttpServer.a */; };
+		8FF6524D1FBBDA6E00E4F924 /* HttpServerDebug.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8FF6524C1FBBDA6E00E4F924 /* HttpServerDebug.bundle */; };
+		8FF6524E1FBBDAA200E4F924 /* libCocoaAsyncSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF652541FBBDAA200E4F924 /* libCocoaAsyncSocket.a */; };
+		8FF6524F1FBBDAA200E4F924 /* libCocoaHttpServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF652551FBBDAA200E4F924 /* libCocoaHttpServer.a */; };
+		8FF652501FBBDAA200E4F924 /* libCocoaLumberjack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF652561FBBDAA200E4F924 /* libCocoaLumberjack.a */; };
+		8FF652511FBBDAA200E4F924 /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF652571FBBDAA200E4F924 /* libFMDB.a */; };
+		8FF652521FBBDAA200E4F924 /* libHttpServerDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF652581FBBDAA200E4F924 /* libHttpServerDebug.a */; };
+		8FF652531FBBDAA200E4F924 /* libZipArchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF652591FBBDAA200E4F924 /* libZipArchive.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,8 +55,15 @@
 		8FD708E11EFA61D900E0547C /* Closet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Closet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE622BE1F7A389600739A2C /* CJProductItemEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJProductItemEditController.swift; sourceTree = "<group>"; };
 		8FE622C01F7A3C0700739A2C /* CJProductItemDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJProductItemDataModel.swift; sourceTree = "<group>"; };
-		8FEFE7031F3D697000D841E0 /* HttpServerDebug.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = HttpServerDebug.bundle; path = ../HttpServerDebug/HttpServerDebug/Resources/HttpServerDebug.bundle; sourceTree = "<group>"; };
 		8FEFE7081F3D6FE100D841E0 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		8FF055971FBA8CBD00964DF1 /* libZipArchive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libZipArchive.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FF6524C1FBBDA6E00E4F924 /* HttpServerDebug.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = HttpServerDebug.bundle; path = ../../httpserverdebug/HttpServerDebug/Resources/HttpServerDebug.bundle; sourceTree = "<group>"; };
+		8FF652541FBBDAA200E4F924 /* libCocoaAsyncSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCocoaAsyncSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FF652551FBBDAA200E4F924 /* libCocoaHttpServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCocoaHttpServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FF652561FBBDAA200E4F924 /* libCocoaLumberjack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCocoaLumberjack.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FF652571FBBDAA200E4F924 /* libFMDB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFMDB.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FF652581FBBDAA200E4F924 /* libHttpServerDebug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libHttpServerDebug.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FF652591FBBDAA200E4F924 /* libZipArchive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libZipArchive.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF95F281F4096A600DDC97F /* libFMDB.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFMDB.a; path = "../../../Library/Developer/Xcode/DerivedData/Closet-cqlnlhkclkznrocfxsuxkhtnzpov/Build/Products/Debug-iphonesimulator/libFMDB.a"; sourceTree = "<group>"; };
 		8FF95F411F409D7200DDC97F /* libCocoaLumberjack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCocoaLumberjack.a; path = "../HttpServerDebug/build/Debug-iphoneos/libCocoaLumberjack.a"; sourceTree = "<group>"; };
 		8FF95F861F413CA900DDC97F /* libCocoaAsyncSocket.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCocoaAsyncSocket.a; path = "../HttpServerDebug/build/Debug-iphoneos/libCocoaAsyncSocket.a"; sourceTree = "<group>"; };
@@ -67,12 +75,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FF95FAA1F413DC300DDC97F /* libCocoaHttpServer.a in Frameworks */,
-				8FF95F871F413CA900DDC97F /* libCocoaAsyncSocket.a in Frameworks */,
-				8FF95F421F409D7200DDC97F /* libCocoaLumberjack.a in Frameworks */,
-				8FF95F291F4096A600DDC97F /* libFMDB.a in Frameworks */,
+				8FF6524E1FBBDAA200E4F924 /* libCocoaAsyncSocket.a in Frameworks */,
+				8FF6524F1FBBDAA200E4F924 /* libCocoaHttpServer.a in Frameworks */,
+				8FF652501FBBDAA200E4F924 /* libCocoaLumberjack.a in Frameworks */,
+				8FF652511FBBDAA200E4F924 /* libFMDB.a in Frameworks */,
+				8FF652521FBBDAA200E4F924 /* libHttpServerDebug.a in Frameworks */,
+				8FF652531FBBDAA200E4F924 /* libZipArchive.a in Frameworks */,
 				8FEFE7091F3D6FE100D841E0 /* libxml2.tbd in Frameworks */,
-				8F16DD341F3CA4FF00A2BFBF /* libHttpServerDebug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +91,13 @@
 		720994CFFB4194E474DE88FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8FF652541FBBDAA200E4F924 /* libCocoaAsyncSocket.a */,
+				8FF652551FBBDAA200E4F924 /* libCocoaHttpServer.a */,
+				8FF652561FBBDAA200E4F924 /* libCocoaLumberjack.a */,
+				8FF652571FBBDAA200E4F924 /* libFMDB.a */,
+				8FF652581FBBDAA200E4F924 /* libHttpServerDebug.a */,
+				8FF652591FBBDAA200E4F924 /* libZipArchive.a */,
+				8FF055971FBA8CBD00964DF1 /* libZipArchive.a */,
 				8FF95FA91F413DC300DDC97F /* libCocoaHttpServer.a */,
 				8FF95F861F413CA900DDC97F /* libCocoaAsyncSocket.a */,
 				8FF95F411F409D7200DDC97F /* libCocoaLumberjack.a */,
@@ -160,7 +176,7 @@
 		8FD708D81EFA61D900E0547C = {
 			isa = PBXGroup;
 			children = (
-				8FEFE7031F3D697000D841E0 /* HttpServerDebug.bundle */,
+				8FF6524C1FBBDA6E00E4F924 /* HttpServerDebug.bundle */,
 				8F18584F1F03EADE00817368 /* Closet */,
 				8FD708E21EFA61D900E0547C /* Products */,
 				720994CFFB4194E474DE88FF /* Frameworks */,
@@ -245,7 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FEFE7041F3D697000D841E0 /* HttpServerDebug.bundle in Resources */,
+				8FF6524D1FBBDA6E00E4F924 /* HttpServerDebug.bundle in Resources */,
 				8F18585A1F03EADF00817368 /* LaunchScreen.storyboard in Resources */,
 				8FB6F8071F05F15200786297 /* Info.plist in Resources */,
 				8F1858591F03EADE00817368 /* Assets.xcassets in Resources */,
@@ -390,12 +406,16 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6UGZ533E78;
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../HttpServerDebug/HttpServerDebug\"",
-					"\"$(SRCROOT)/../HttpServerDebug/ThirdParties/FMDB\"/**",
+					"\"$(SRCROOT)/../../httpserverdebug/ThirdParties/FMDB\"/**",
+					"\"$(SRCROOT)/../../httpserverdebug/HttpServerDebug\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HSD",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -415,12 +435,16 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6UGZ533E78;
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../HttpServerDebug/HttpServerDebug\"",
-					"\"$(SRCROOT)/../HttpServerDebug/ThirdParties/FMDB\"/**",
+					"\"$(SRCROOT)/../../httpserverdebug/ThirdParties/FMDB\"/**",
+					"\"$(SRCROOT)/../../httpserverdebug/HttpServerDebug\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HSD",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

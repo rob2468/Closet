@@ -5,6 +5,6 @@
       location = "group:Closet/Closet.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:HttpServerDebug/HttpServerDebug.xcodeproj">
+      location = "group:../httpserverdebug/HttpServerDebug.xcodeproj">
    </FileRef>
 </Workspace>

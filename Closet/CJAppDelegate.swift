@@ -21,7 +21,7 @@ class CJAppDelegate: UIResponder, UIApplicationDelegate {
         
         #if DEBUG
             let dbFilePath = CJDBManager.sharedInstance.dbFilePath.absoluteString
-            BDHttpServerManager.updateDatabaseFilePath(dbFilePath)
+//            BDHttpServerManager.updateDefaultInspectDBFilePath(dbFilePath)
             BDHttpServerManager.startHttpServer("5555")
         #endif
         return true
