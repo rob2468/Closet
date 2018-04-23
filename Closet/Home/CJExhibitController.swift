@@ -14,7 +14,6 @@ class CJExhibitCollectionViewCell: UICollectionViewCell {
     
     var editButton: UIButton
     
-    
     override init(frame: CGRect) {
         self.editButton = UIButton.init(type: UIButtonType.custom)
 
@@ -25,6 +24,7 @@ class CJExhibitCollectionViewCell: UICollectionViewCell {
         self.editButton.translatesAutoresizingMaskIntoConstraints = false
         self.editButton.setTitle("编辑", for: UIControlState.normal)
         self.editButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        self.editButton.isHidden = true;
         self.contentView.addSubview(self.editButton)
         
         self.contentView.addConstraints([
@@ -33,7 +33,9 @@ class CJExhibitCollectionViewCell: UICollectionViewCell {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("")
+//        fatalError("")
+        self.editButton = UIButton.init(type: UIButtonType.custom)
+        super.init(coder: aDecoder);
     }
 }
 
@@ -87,7 +89,7 @@ class CJExhibitController: UIViewController, UICollectionViewDataSource, UIColle
     func addProductButtonPressed() {
         let addController = CJProductItemEditController.init(withProductItem: nil)
 //        addController.delegate = self
-        let rootController = CJRootController.fetchRootController()
+        let rootController = CJRootController.fetchRootVC()
         rootController?.present(addController, animated: true, completion: nil)
     }
     

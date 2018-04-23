@@ -133,7 +133,7 @@ class CJCategoryManageController: UIViewController, CJCategoryEditControllerDele
     func showCategoryEditVC(_ category: CJCategoryDataModel?) {
         let addController = CJCategoryEditController.init(withCategory: category)
         addController.delegate = self
-        let rootController = CJRootController.fetchRootController()
+        let rootController = CJRootController.fetchRootVC()
         rootController?.present(addController, animated: true, completion: nil)
     }
     
@@ -214,7 +214,7 @@ class CJCategoryManageController: UIViewController, CJCategoryEditControllerDele
                 }
             })
             alert.addAction(confirmAction)
-            let rootController = CJRootController.fetchRootController()
+            let rootController = CJRootController.fetchRootVC()
             rootController?.present(alert, animated: true, completion: nil)
         }
     }
