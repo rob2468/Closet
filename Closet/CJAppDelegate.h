@@ -10,8 +10,7 @@
 #import "HSDDelegate.h"
 
 @interface CJAppDelegate : UIResponder
-<UIApplicationDelegate,
-HSDDelegate>
+<UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

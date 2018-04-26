@@ -8,7 +8,6 @@
 
 #import "CJAppDelegate.h"
 #import "Closet-Swift.h"
-#import "HSDManager.h"
 #import "CJRootController.h"
 
 @implementation CJAppDelegate
@@ -19,16 +18,8 @@
     rootVC.view.backgroundColor = [UIColor yellowColor];
     self.window.rootViewController = rootVC;
     [self.window makeKeyAndVisible];
-    
-#if DEBUG
-    [HSDManager updateHSDDelegate:self];
-    [HSDManager startHttpServer:@"5555"];
-#endif
     return YES;
 }
 
--(NSDictionary *)onHSDReceiveInfo:(NSString *)info {
-    return @{@"a": @"b"};
-}
 
 @end

@@ -4,7 +4,4 @@
    <FileRef
       location = "group:Closet/Closet.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:../httpserverdebug/HttpServerDebug.xcodeproj">
-   </FileRef>
 </Workspace>
