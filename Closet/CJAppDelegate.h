@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HSDDelegate.h"
 
 @interface CJAppDelegate : UIResponder
 <UIApplicationDelegate>
